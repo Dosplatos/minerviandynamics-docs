@@ -1,0 +1,246 @@
+:root {
+    /* Font */
+    --primary-font: 'Titillium Web', sans-serif;
+    
+    /* Colors */
+    --color-yellow-100: #f8f1ce;
+    --color-yellow-200: #f8e792;
+    --color-yellow-300: #f3db67;
+    
+    --color-purple-300: #3a1d78;
+    --color-purple-200: #60459b;
+    --color-purple-100: #a98de6;
+    
+    --color-red-400: #580300;
+    --color-red-300: #58030073;
+
+    --color-blue-100: #a4d3f4;
+
+    body {
+        font-family: var(--primary-font);
+    }
+
+    pre, pre code {
+        color: orange;
+        padding: 1em;
+        border-radius: 4px;
+        overflow-x: auto;
+        font-family: monospace;
+    }
+
+    code {
+        color: orange;
+        padding: 0.2em 0.4em;
+        border-radius: 4px;
+    }
+
+    /* Supporting Classes */
+
+    .keyword {
+        border-radius: 5px;
+        border: var(--color-purple-100) 1px solid;
+        padding: 0px 5px 0px 5px;
+        font-weight: bold;
+        color: var(--color-purple-100);
+    }
+
+    .specialHighlight {
+        border-radius: 5px;
+        border: solid 1px;
+        padding: 0px 5px;
+        font-weight: bold;
+    }
+
+    /* data-theme specific */
+
+    &[data-theme='light'] {
+        --sl-color-text-accent: var(--color-blue-100) !important;
+
+        code, .astro-code {
+            background-color: black !important;
+            border-color: transparent;
+        }
+
+        .wip-wrapper {
+            background: linear-gradient(90deg, var(--color-purple-300), var(--color-purple-100));
+          }
+
+        .specialHighlight {
+            border-color: var(--color-purple-300);
+            color: var(--color-purple-300);
+
+            &a:hover {
+                color: var(--color-purple-100);
+            }
+        }
+
+        h1, h2, h3, h4, .link-title, .large, .caret {
+            color: var(--color-purple-300);
+        }
+        h1, .link-title, .large, .caret {
+            color: var(--color-purple-300);
+        }
+
+        table, table th, table td {
+            color: white;
+
+            a {
+                color: var(--color-yellow-300);
+
+                &:hover {
+                    color: var(--color-yellow-100);
+                }
+            }
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--color-purple-300);
+            font-weight: bold;
+            
+            &:hover {
+                color: var(--color-purple-100);
+            }
+
+            &[aria-current="page"]:hover {
+                color: white;
+            }
+            
+        }
+    }
+
+    &[data-theme='dark'] {
+        // --sl-color-text-accent: var(--color-red-400); red kind of looks gross
+        --sl-color-text-accent: var(--color-purple-300) !important;
+        --sr-only: #a98de6;
+
+        code, .astro-code {
+            background-color: black !important;
+            border-color: transparent;
+        }
+
+        .wip {
+            background-color: var(--color-purple-300);
+        }
+
+        .specialHighlight {
+            color: var(--color-yellow-300);
+            border: 1px solid var(--color-yellow-300);
+        }
+
+        h1, h2, h3, .link-title, .large, .caret {
+            color: white;
+        }
+
+        table, table th, table td {
+
+            a {
+                color: var(--color-yellow-300);
+
+                &:hover {
+                    color: var(--color-yellow-100);
+                }
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-yellow-200);
+            font-weight: bold;
+    
+            &:hover {
+                color: white;
+            }
+        }
+    }
+    table {
+        overflow: hidden;
+        display: table !important;
+        border-radius: 0.9375em;
+        width: auto;
+        padding: var(--padding-block) 0;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: var(--color-purple-300);
+      
+        th, td {
+          background-color: var(--color-purple-300);
+          padding: 6px;
+          border-color: transparent #60459b transparent transparent;
+        }
+      
+        thead tr:first-child th:first-child,
+        tbody tr:first-child, 
+        tfoot tr:first-child td:first-child {
+          border-top-left-radius: 5px;
+        }
+      
+        thead tr:first-child th:last-child,
+        tbody tr:first-child,
+        tfoot tr:first-child td:last-child {
+          border-top-right-radius: 0.9375em;
+          border-right-color: transparent;        }
+      
+        tbody tr:last-child td:first-child,
+        tfoot tr:last-child td:first-child {
+          border-bottom-left-radius: 0.9375em;
+        }
+      
+        tbody tr:last-child td:last-child,
+        tfoot tr:last-child td:last-child {
+          border-bottom-right-radius: 0.9375em;
+          border-right-color: transparent;
+          border-bottom-color: transparent;
+        }
+      }
+      
+      table thead tr:first-child th {
+        border-bottom: 0.0625em solid var(--color-purple-200);
+      }
+      
+      table tr:not(:last-child) td,
+      table thead tr:not(:last-child) th {
+        position: relative;
+      
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          border-bottom: 0.0625em solid var(--color-purple-200);
+        }
+      }
+      
+      table tr:not(:last-child) td:first-child::before,
+      table thead tr:not(:last-child) th:first-child::before {
+          left: 1.25em;
+      }
+      
+      table thead tr:first-child th,
+      table tbody tr:first-child td {
+        padding-top: 0.9375em;
+      }
+      
+      table tbody tr:last-child td,
+      table tfoot tr:last-child td {
+        padding-bottom: 0.9375em;
+      }
+      
+      table tr > th:first-child,
+      table tr > td:first-child {
+        padding-left: 1.25em;
+      }
+      
+      table tr > th:last-child,
+      table tr > td:last-child {
+        padding-right: 1.25em;
+        border-right-color: transparent;
+      }
+
+      .hiddenTitles {
+        visibility: hidden;
+        display: inline;
+        font-size: 1px;
+      }
+}

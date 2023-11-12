@@ -1,0 +1,52 @@
+---
+import in_progress from "../assets/in_progress.png";
+---
+
+<style>
+
+.wip {
+  background-color: var(--color-blue-100);
+  border-radius: 15px;
+  font-style: italic;
+  padding: 20px;
+  display: inline-flex;
+}
+
+.wipcontent {
+  margin: auto;
+  padding: auto;
+  color: white;
+  text-align: left;
+}
+
+.wipcontent.@media (max-width: 700px) {
+  margin-left: 25px;
+}
+
+.wip-wrapper {
+  background: linear-gradient(90deg, var(--color-red-400), var(--color-yellow-300));
+  border-radius: 17px;  
+  padding: 2px;  
+  display: inline-flex;
+}
+
+.uimage {
+    display: block;
+    width: 64px;
+    height: 64px; 
+    margin: 0px 20px 0px 20px;
+    object-fit: contain;
+}
+.uimage.@media (max-width: 700px) {
+  margin: auto;
+}
+</style>
+
+<div class="wip-wrapper">
+  <div class="wip">
+    <img src={in_progress.src} class="uimage" alt="In Progress"/>
+    <div class="wipcontent">
+      <slot />
+    </div>
+  </div>
+</div>
