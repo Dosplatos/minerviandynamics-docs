@@ -24,11 +24,11 @@ export default defineConfig({
 						// Each item here is one entry in the navigation menu.
 						{ 
 							label: 'Getting Started', 
-							link: '/guides/getting-started' 
+							link: '/en/guides/getting-started' 
 						},
 						{ 
 							label: 'Generating Isk', 
-							link: '/guides/generating-isk' 
+							link: '/en/guides/generating-isk' 
 						},
 					],
 				},
@@ -39,7 +39,7 @@ export default defineConfig({
 					items: [
 						{
 							label: `Industrialist: Markets`,
-							link: `/career-overview/markets`
+							link: `/en/career-overview/markets`
 						},
 						{
 							label: `Industrialist: Mining`,
